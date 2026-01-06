@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Education & Experience | Munisa Rakhmonova</title>
+
+<style>
+/* ===== RESET ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#0a0a0a;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* ===== HEADER ===== */
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 6%;
+  background:#000;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:bold;
+}
+
+/* ===== NAV ===== */
+.nav{
+  display:flex;
+  gap:16px;
+}
+
+.nav a{
+  color:#fff;
+  text-decoration:none;
+  font-size:16px;
+  opacity:.85;
+}
+
+.nav a.active,
+.nav a:hover{
+  color:gold;
+  opacity:1;
+}
+
+/* ===== HAMBURGER ===== */
+.hamburger{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  z-index:101;
+}
+
+.hamburger span{
+  width:30px;
+  height:3px;
+  background:#fff;
+  border-radius:3px;
+  transition:.3s;
+}
+
+/* HAMBURGER ANIMATION (X) */
+.hamburger.active span:nth-child(1){
+  transform:rotate(45deg) translate(5px,5px);
+}
+.hamburger.active span:nth-child(2){
+  opacity:0;
+}
+.hamburger.active span:nth-child(3){
+  transform:rotate(-45deg) translate(6px,-6px);
+}
+
+/* MOBILE MENU */
+@media(max-width:768px){
+  .hamburger{display:flex;}
+
+  .nav{
+    position:fixed;
+    top:0;
+    right:-260px;
+    width:250px;
+    height:100%;
+    background:#111;
+    padding:60px 20px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:14px;
+    transition:right .3s ease;
+    z-index:100;
+  }
+
+  .nav.active{right:0;}
+}
+
+/* ===== ROW SECTIONS ===== */
+.main-row{
+  display:flex;
+  gap:40px;
+  padding:80px 6%;
+  flex-wrap:wrap;
+}
+
+.column{
+  flex:1;
+  min-width:300px;
+  background:#111;
+  padding:30px;
+  border-radius:12px;
+  box-shadow: 0 0 15px rgba(255,215,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* tez va silliq */
+}
+
+.column:hover{
+  transform: translateY(-5px); /* yengil yuqoriga siljish */
+  box-shadow: 0 10px 30px rgba(255,215,0,0.25); /* hover da shadow kuchayadi */
+}
+
+.column h2{
+  font-size:28px;
+  margin-bottom:30px;
+  color:gold;
+  border-bottom:2px solid gold;
+  padding-bottom:8px;
+}
+
+.timeline{
+  display:flex;
+  flex-direction:column;
+  gap:25px;
+}
+
+.item{
+  position:relative;
+  padding-left:20px;
+}
+
+.item .dot{
+  position:absolute;
+  left:0;
+  top:5px;
+  width:10px;
+  height:10px;
+  background:gold;
+  border-radius:50%;
+}
+
+.item h3{
+  font-size:18px;
+  margin-bottom:3px;
+}
+
+.item .date{
+  font-size:13px;
+  color:gold; /* sanalarni gold rang qildik */
+  margin-bottom:4px;
+}
+
+.item p{
+  font-size:14px;
+  line-height:1.5;
+}
+
+/* RESPONSIVE */
+@media(max-width:992px){
+  .main-row{
+    flex-direction:column;
+  }
+  .column h2{
+    font-size:24px;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="logo">Munisa Rakhmonova</div>
+
+  <button class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+ <nav class="nav" id="nav">
+  <a href="index.html#profile">Profile</a>
+  <a href="#background">Background</a>
+  <a href="awards.html">Awards</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html" class="active">Contact</a>
+</nav>
+</header>
+
+<main>
+
+  <div class="main-row">
+
+    <!-- ===== EDUCATION ===== -->
+    <div class="column" id="education">
+      <h2>Education</h2>
+      <div class="timeline">
+        <div class="item">
+  <span class="dot"></span>
+  <h3>PDP University</h3>
+  <p class="date">02/10/2024 – Present</p>
+  <p>Foundation Diploma in Computer Science  &  Pearson BTEC Level 3 </p>
+  <p class="location">Tashkent, Uzbekistan</p> <!-- Qo‘shildi -->
+</div>
+
+
+        <div class="item">
+          <span class="dot"></span>
+          <h3>Invaluable Hub</h3>
+          <p class="date">05/02/2025 – 05/03/2025</p>
+          <p>Application for university course (Remote)</p>
+        </div>
+
+        <div class="item">
+          <span class="dot"></span>
+<h3>High School Diploma – Vocational School No.2</h3>
+          <p class="date">08/09/2022 – 06/07/2024</p>
+          <p>Kashkadarya, Uzbekistan</p>
+        </div>
+
+        <div class="item">
+          <span class="dot"></span>
+          <h3>General Secondary Education</h3>
+          <p class="date">06/09/2013 – 25/05/2022</p>
+          <p>School No. 38, Kashkadarya, Uzbekistan</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <div class="column" id="experience">
+      <h2>Experience</h2>
+      <div class="timeline">
+        <div class="item">
+          <span class="dot"></span>
+          <h3>English Teacher</h3>
+          <p class="date">07/2023 – 08/2023</p>
+          <p>Taught grammar and organized speaking clubs for 20 students.</p>
+        </div>
+
+        <div class="item">
+          <span class="dot"></span>
+          <h3>Independent Programming Learner</h3>
+          <p class="date">08/2024 – 10/2024</p>
+          <p>Self-taught C++ and Python. Earned 95% scholarship.</p>
+        </div>
+
+        <div class="item">
+          <span class="dot"></span>
+          <h3>IT Community of Uzbekistan – Volunteer</h3>
+          <p class="date">25/02/2025 – Present</p>
+          <p>Community connecting young people through events and hackathons.</p>
+        </div>
+
+        <div class="item">
+          <span class="dot"></span>
+          <h3>UIC ( Uzbek Innovators Community) – Tech Lead</h3>
+          <p class="date">02/01/2026 – Present</p>
+          <p>Leading IT students and startup initiatives.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>

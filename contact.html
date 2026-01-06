@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Munisa Rakhmonova</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#0a0a0a;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 6%;
+  background:#000;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:bold;
+}
+
+
+.nav{
+  display:flex;
+  gap:16px;
+}
+
+.nav a{
+  color:#fff;
+  text-decoration:none;
+  font-size:16px;
+  opacity:.85;
+}
+
+.nav a:hover,
+.nav a.active{
+  color:gold;
+  opacity:1;
+}
+
+.hamburger{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  z-index:101;
+}
+
+.hamburger span{
+  width:30px;
+  height:3px;
+  background:#fff;
+  border-radius:3px;
+  transition:.3s;
+}
+
+.hamburger.active span:nth-child(1){
+  transform:rotate(45deg) translate(5px,5px);
+}
+.hamburger.active span:nth-child(2){
+  opacity:0;
+}
+.hamburger.active span:nth-child(3){
+  transform:rotate(-45deg) translate(6px,-6px);
+}
+
+@media(max-width:768px){
+  .hamburger{
+    display:flex;
+  }
+
+  .nav{
+    position:fixed;
+    top:0;
+    right:-260px;
+    width:250px;
+    height:100%;
+    background:#111;
+    padding:60px 20px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:14px;
+    transition:right .3s ease;
+    z-index:100;
+  }
+
+  .nav.active{
+    right:0;
+  }
+}
+
+.contact{
+  padding:70px 6%;
+}
+
+.title{
+  font-size:36px;
+  margin-bottom:50px;
+  text-align:center;
+}
+
+.title span{
+  color:gold;
+}
+
+.contact-box{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+}
+
+@media(max-width:768px){
+  .contact-box{
+    grid-template-columns:1fr;
+  }
+}
+
+/* INFO */
+.contact-info p{
+  margin:15px 0;
+  opacity:.85;
+  font-size:16px;
+}
+
+.contact-info i{
+  color:gold;
+  margin-right:10px;
+}
+
+.social-links{
+  display:flex;
+  gap:20px;
+  margin-top:20px;
+}
+
+.social-links a{
+  color:#fff;
+  font-size:24px;
+  transition:.3s;
+}
+
+.social-links a:hover{
+  color:gold;
+  transform:translateY(-4px);
+}
+
+/* CV DOWNLOAD BUTTON */
+.cv-download{
+  display:inline-block;
+  margin-top:25px;
+  padding:12px 24px;
+  background:gold;
+  color:#000;
+  font-weight:bold;
+  border-radius:8px;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.cv-download:hover{
+  background:#ffb703;
+}
+
+/* FORM */
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+  padding:14px;
+  margin-bottom:15px;
+  background:#111;
+  border:1px solid #333;
+  color:#fff;
+  border-radius:8px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+  outline:none;
+  border-color:gold;
+}
+
+.contact-form textarea{
+  resize:none;
+  height:140px;
+}
+
+.contact-form button{
+  width:100%;
+  background:gold;
+  color:#000;
+  border:none;
+  padding:14px;
+  font-weight:bold;
+  cursor:pointer;
+  border-radius:8px;
+  transition:.3s;
+}
+
+.contact-form button:hover{
+  background:#ffb703;
+}
+
+.success{
+  color:lime;
+  margin-top:15px;
+  display:none;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="logo">Munisa Rakhmonova</div>
+
+  <button class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="nav" id="nav">
+    <a href="index.html">Profile</a>
+    <a href="education.html#background">Background</a>
+    <a href="awards.html">Awards</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+</header>
+
+<section class="contact">
+  <h2 class="title">Let’s <span>Connect</span></h2>
+
+  <div class="contact-box">
+    <div class="contact-info">
+      <p><i class="fas fa-envelope"></i> munisaraxmonova04@gmail.com</p>
+      <p><i class="fas fa-phone"></i> +998 91 815 63 05</p>
+      <p><i class="fas fa-location-dot"></i> Tashkent, Uzbekistan</p>
+
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/munisa-rakhmonova-869a35364"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/Munisa006"><i class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/munisa96681"><i class="fab fa-instagram"></i></a>
+      </div>
+
+      <!-- CV DOWNLOAD BUTTON -->
+      <a href="images/Munisa_CV.pdf" class="cv-download" download>Download CV</a>
+    </div>
+
+    <form class="contact-form" name="submit-to-google-sheet">
+      <input type="text" name="Name" placeholder="Full Name" required>
+      <input type="email" name="Email" placeholder="Your Email" required>
+      <textarea name="Message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+      <p class="success" id="successMsg"></p>
+    </form>
+  </div>
+</section>
+<script src="script.js"></script>
+
+</body>
+</html>

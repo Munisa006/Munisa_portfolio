@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Awards | Munisa Rakhmonova</title>
+
+<style>
+/* ===== RESET ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#0a0a0a;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* ===== HEADER ===== */
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 6%;
+  background:#000;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:bold;
+}
+
+/* ===== NAV ===== */
+.nav{
+  display:flex;
+  gap:16px;
+}
+
+.nav a{
+  color:#fff;
+  text-decoration:none;
+  font-size:16px;
+  opacity:.85;
+}
+
+.nav a.active,
+.nav a:hover{
+  color:gold;
+  opacity:1;
+}
+
+/* ===== HAMBURGER ===== */
+.hamburger{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  z-index:101;
+}
+
+.hamburger span{
+  width:30px;
+  height:3px;
+  background:#fff;
+  border-radius:3px;
+  transition:.3s;
+}
+
+.hamburger.active span:nth-child(1){
+  transform:rotate(45deg) translate(5px,5px);
+}
+.hamburger.active span:nth-child(2){
+  opacity:0;
+}
+.hamburger.active span:nth-child(3){
+  transform:rotate(-45deg) translate(6px,-6px);
+}
+
+/* ===== MOBILE MENU ===== */
+@media(max-width:768px){
+  .hamburger{display:flex;}
+
+  .nav{
+    position:fixed;
+    top:0;
+    right:-260px;
+    width:250px;
+    height:100%;
+    background:#111;
+    padding:60px 20px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:14px;
+    transition:right .3s ease;
+    z-index:100;
+  }
+
+  .nav.active{
+    right:0;
+  }
+}
+
+/* ===== AWARDS SECTION ===== */
+.awards-container{
+  padding:80px 6%;
+}
+
+.section-title{
+  font-size:36px;
+  margin-bottom:50px;
+}
+
+.section-title::after{
+  content:"";
+  width:70px;
+  height:4px;
+  background:gold;
+  display:block;
+  margin-top:12px;
+}
+
+/* GRID 3 COLUMN DESKTOP */
+.award-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:30px;
+}
+
+@media(max-width:1024px){
+  .award-grid{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+@media(max-width:768px){
+  .award-grid{
+    grid-template-columns:1fr;
+  }
+  .section-title{font-size:28px;}
+}
+
+.award-card{
+  background:linear-gradient(145deg,#101010,#161616);
+  border-radius:18px;
+  overflow:hidden;
+  cursor:pointer;
+  transition:.4s ease;
+  box-shadow:0 15px 30px rgba(0,0,0,.4);
+}
+
+.award-card:hover{
+  transform:translateY(-12px) scale(1.02);
+  box-shadow:0 0 35px rgba(255,215,0,.35);
+}
+
+.award-img{
+  width:100%;
+  height:200px;
+  background:#0f0f0f;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px;
+}
+
+.award-img img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.award-info{
+  padding:20px 22px;
+}
+
+.award-info h3{
+  font-size:18px;
+  margin-bottom:6px;
+}
+
+.award-info span{
+  font-size:13px;
+  color:gold;
+  margin-bottom:10px;
+  display:block;
+}
+
+.award-info p{
+  font-size:14px;
+  opacity:.85;
+  line-height:1.5;
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="logo">Munisa Rakhmonova</div>
+
+  <button class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="nav" id="nav">
+  <a href="index.html#profile">Profile</a>
+  <a href="education.html#background">Background</a>
+  <a href="awards.html" class="active">Awards</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<main class="awards-container">
+  <h2 class="section-title">Awards & Certificates</h2>
+
+  <div class="award-grid">
+    <div class="award-card">
+      <div class="award-img">
+        <img src="./images/Aspire-1.jpg" alt="Aspire Leaders Program">
+      </div>
+      <div class="award-info">
+        <h3>Aspire Leaders Program – Cohort 5</h3>
+        <span>Online | 15/10/2025</span>
+        <p>
+          <strong>Harvard Business School</strong> taught competitive global leadership program
+          focused on leadership development, personal growth, and international networking.
+        </p>
+      </div>
+    </div>
+
+    <div class="award-card">
+      <div class="award-img">
+        <img src="./images/Eco_briquette.jpg" alt="GreenTech Hackathon">
+      </div>
+      <div class="award-info">
+        <h3>GreenTech Hackathon 2025 – 3rd Place Winner</h3>
+        <span>Tashkent | 11/10/2025</span>
+        <p>
+          Developed an eco-briquette, a sustainable fuel that burns like coal but is environmentally
+          friendly. Worked in an all-girls team and won a <strong>10 million UZS</strong> innovation voucher.
+        </p>
+      </div>
+    </div>
+
+    <div class="award-card">
+      <div class="award-img">
+        <img src="./images/IUI.jpg" alt="IUI Leaders Community">
+      </div>
+      <div class="award-info">
+        <h3>IUI – Uzbekistan Leaders Community (2025 Cohort)</h3>
+        <span>Tashkent | 04/10/2025</span>
+        <p>
+          Selected among <strong>200+ applicants</strong> for an offline leadership and project
+          development program. Participated in masterclasses on project management, media,
+          and innovation.
+        </p>
+      </div>
+    </div>
+
+    <div class="award-card">
+      <div class="award-img">
+        <img src="./images/Ibrat_minds.jpg" alt="Ibrat Minds">
+      </div>
+      <div class="award-info">
+        <h3>Ibrat Minds</h3>
+        <span>Uzbekistan | 18/05/2025</span>
+        <p>
+          Selected among <strong>600+ candidates</strong> through a two-stage process.
+          Improved public speaking skills, confidence, and topic selection strategies.
+        </p>
+      </div>
+    </div>
+
+    <div class="award-card">
+      <div class="award-img">
+        <img src="./images/scholarship .jpg" alt="PDP University Scholarship">
+      </div>
+      <div class="award-info">
+        <h3>PDP University Scholarship Recipient (2 Years)</h3>
+        <span>Tashkent | 21/10/2024</span>
+        <p>
+          Awarded a <strong>95% scholarship</strong> covering two years of study, including
+          foundation year, major subjects, tuition fees, meals, and housing.
+        </p>
+      </div>
+    </div>
+
+    <div class="award-card">
+      <div class="award-img">
+        <img src="./images/Course.jpg" alt="Google Project Management Certificate">
+      </div>
+      <div class="award-info">
+        <h3>Google Project Management Certificate</h3>
+        <span>Online | 21/12/2023</span>
+        <p>
+          Agile, planning, execution, and professional project management.
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>

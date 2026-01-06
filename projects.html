@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Projects | Munisa Rakhmonova</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#0a0a0a;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* HEADER */
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 6%;
+  background:#000;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:bold;
+}
+
+/* NAVIGATION */
+.nav{
+  display:flex;
+  gap:16px;
+}
+
+.nav a{
+  color:#fff;
+  text-decoration:none;
+  font-size:16px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  opacity:.85;
+}
+
+.nav a.active,
+.nav a:hover{
+  color:gold;
+  opacity:1;
+}
+
+/* HAMBURGER */
+.hamburger{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  z-index:101;
+}
+
+.hamburger span{
+  width:30px;
+  height:3px;
+  background:#fff;
+  border-radius:3px;
+  transition:.3s;
+}
+
+.hamburger.active span:nth-child(1){
+  transform:rotate(45deg) translate(5px,5px);
+}
+.hamburger.active span:nth-child(2){
+  opacity:0;
+}
+.hamburger.active span:nth-child(3){
+  transform:rotate(-45deg) translate(6px,-6px);
+}
+
+/* MOBILE MENU */
+@media(max-width:768px){
+  .hamburger{display:flex;}
+
+  .nav{
+    position:fixed;
+    top:0;
+    right:-260px;
+    width:250px;
+    height:100%;
+    background:#111;
+    padding:60px 20px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:18px;
+    transition:.3s;
+    z-index:100;
+  }
+
+  .nav.active{
+    right:0;
+  }
+}
+
+/* SECTION */
+.section{
+  padding:80px 6%;
+}
+
+.section-title{
+  font-size:36px;
+  margin-bottom:50px;
+}
+
+.section-title::after{
+  content:"";
+  width:70px;
+  height:4px;
+  background:gold;
+  display:block;
+  margin-top:12px;
+}
+
+/* PROJECTS */
+.project-grid{
+  display:flex;
+  flex-direction:row;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+@media(max-width:768px){
+  .project-grid{
+    flex-direction:column;
+  }
+}
+
+.project-card{
+  flex:1 1 300px;
+  background:linear-gradient(145deg,#101010,#161616);
+  border-radius:18px;
+  box-shadow:0 15px 30px rgba(0,0,0,.4);
+  transition:.4s;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+
+.project-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 35px rgba(255,215,0,.35);
+}
+
+/* IMAGE */
+.project-preview{
+  width:100%;
+  max-height:250px;
+  overflow:hidden;
+}
+
+.project-preview img{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:cover;
+}
+
+/* CONTENT */
+.project-content{
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+}
+
+.project-card h3{
+  margin-bottom:10px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:18px;
+}
+
+.project-card p{
+  opacity:.85;
+  font-size:14px;
+  margin-bottom:15px;
+}
+
+.project-links{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.project-links a{
+  padding:8px 16px;
+  border-radius:20px;
+  background:#111;
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.project-links a:hover{
+  background:gold;
+  color:#000;
+}
+
+/* SKILLS */
+.skills-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+  margin-top:40px;
+}
+
+@media(max-width:768px){
+  .skills-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+.skill{
+  background:#111;
+  padding:18px 20px;
+  border-radius:12px;
+}
+
+.skill-title{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:8px;
+  font-size:14px;
+}
+
+.bar{
+  height:8px;
+  background:#222;
+  border-radius:8px;
+  overflow:hidden;
+}
+
+.bar span{
+  display:block;
+  height:100%;
+  background:linear-gradient(90deg,gold,#ffb703);
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="logo">Munisa Rakhmonova</div>
+
+  <button class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </button>
+
+  <nav class="nav" id="nav">
+    <a href="index.html#profile"></i>Profile</a>
+    <a href="education.html#background">Background</a>
+    <a href="awards.html"></i>Awards</a>
+    <a href="projects.html" class="active"></i>Projects</a>
+    <a href="contact.html"></i>Contact</a>
+  </nav>
+</header>
+
+<!-- PROJECTS -->
+<section class="section" id="projects">
+  <h2 class="section-title">Projects</h2>
+
+  <div class="project-grid">
+
+    <!-- PROJECT 1 -->
+    <div class="project-card">
+      <div class="project-preview">
+        <img src="./images/GreenStay.jpg" alt="Green Stay Zone">
+      </div>
+      <div class="project-content">
+        <h3><i class="fa-solid fa-tree"></i> Green Stay Zone</h3>
+        <p>This project is currently in progress.
+I am working on an eco-friendly resort website,
+focusing on sustainable design and user experience.
+Some features are still under development.</p>
+        <div class="project-links">
+          <a href="https://green-stay-zone.netlify.app" target="_blank"><i class="fa-solid fa-globe"></i> Live Demo</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 2 -->
+    <div class="project-card">
+      <div class="project-preview">
+        <img src="./images/InterviewLab.jpg" alt="InterviewLab">
+      </div>
+      <div class="project-content">
+        <h3><i class="fa-solid fa-comments"></i> InterviewLab</h3>
+        <p>
+This platform is currently under development.
+The goal is to help users start their IT careers through interview practice
+and mentorship. Planned features include one-on-one mentoring,
+coding challenges, and interview preparation tools.
+</p>
+
+        <div class="project-links">
+          <a href="https://tiny-naiad-5f91e5.netlify.app/" target="_blank"><i class="fa-solid fa-globe"></i> Live Demo</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section" id="skills">
+  <h2 class="section-title">Skills</h2>
+
+  <div class="skills-grid">
+    <div class="skill">
+      <div class="skill-title"><span>Microsoft Office</span><span>80%</span></div>
+      <div class="bar"><span style="width:80%"></span></div>
+    </div>
+    <div class="skill">
+      <div class="skill-title"><span>Canva Design</span><span>90%</span></div>
+      <div class="bar"><span style="width:90%"></span></div>
+    </div>
+    <div class="skill">
+      <div class="skill-title"><span>C++</span><span>50%</span></div>
+      <div class="bar"><span style="width:50%"></span></div>
+    </div>
+    <div class="skill">
+      <div class="skill-title"><span>Figma</span><span>50%</span></div>
+      <div class="bar"><span style="width:50%"></span></div>
+    </div>
+    <div class="skill">
+      <div class="skill-title"><span>Google Drive</span><span>100%</span></div>
+      <div class="bar"><span style="width:100%"></span></div>
+    </div>
+    <div class="skill">
+      <div class="skill-title"><span>HTML & CSS</span><span>80%</span></div>
+      <div class="bar"><span style="width:80%"></span></div>
+    </div>
+    <div class="skill">
+      <div class="skill-title"><span>Python</span><span>95%</span></div>
+      <div class="bar"><span style="width:95%"></span></div>
+    </div>
+    <div class="skill">
+      <div class="skill-title"><span>SQL / Excel</span><span>75%</span></div>
+      <div class="bar"><span style="width:75%"></span></div>
+    </div>
+  </div>
+</section>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>
