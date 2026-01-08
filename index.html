@@ -51,13 +51,15 @@ body{
   transition:.3s;
 }
 
-.nav a:hover{color:gold}
+.nav a:hover{
+  color:gold;
+}
 
+/* ACTIVE (underline YO‘Q) */
 .nav a.active{
   color:gold;
   opacity:1;
   font-weight:bold;
-  border-bottom:2px solid gold;
 }
 
 /* HAMBURGER */
@@ -90,7 +92,7 @@ body{
 
 /* MOBILE MENU */
 @media(max-width:768px){
-  .hamburger{display:flex}
+  .hamburger{display:flex;}
 
   .nav{
     position:fixed;
@@ -107,7 +109,9 @@ body{
     transition:right .3s ease;
   }
 
-  .nav.active{right:0}
+  .nav.active{
+    right:0;
+  }
 }
 
 /* ================= PROFILE SECTION ================= */
@@ -115,11 +119,20 @@ body{
   padding:100px 6%;
 }
 
-/* CARD */
+/* CARD — REAL CENTER */
 .profile-card{
   max-width:1000px;
   margin:auto;
-  padding:70px 40px;
+  min-height:520px;
+  padding:60px 40px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;   /* 🔥 VERTICAL CENTER */
+  align-items:center;       /* 🔥 HORIZONTAL CENTER */
+  text-align:center;
+  gap:35px;
+
   border-radius:24px;
   background:linear-gradient(
     135deg,
@@ -128,21 +141,15 @@ body{
   );
   border:1px solid rgba(255,255,255,0.1);
   box-shadow:0 40px 80px rgba(0,0,0,.7);
-
-  /* 🔥 CENTER MAGIC */
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  text-align:center;
-  gap:35px;
 }
 
-/* IMAGE CENTER */
+/* IMAGE — PERFECT CENTER */
 .profile-img-wrap{
   width:260px;
   height:260px;
   border-radius:50%;
   padding:6px;
+
   background:linear-gradient(45deg, gold, orange);
   box-shadow:0 0 40px rgba(255,215,0,.5);
 
@@ -179,17 +186,7 @@ body{
 .profile-text{
   font-size:18px;
   line-height:1.8;
-  max-width:600px;
-}
-
-/* LINE */
-.profile-right::before{
-  content:"";
-  display:block;
-  width:70px;
-  height:3px;
-  background:gold;
-  margin:0 auto 18px;
+  max-width:620px;
 }
 
 /* RESPONSIVE */
@@ -212,7 +209,9 @@ body{
   <h1 class="logo">WELCOME TO MY PORTFOLIO</h1>
 
   <button class="hamburger" id="hamburger">
-    <span></span><span></span><span></span>
+    <span></span>
+    <span></span>
+    <span></span>
   </button>
 
   <nav class="nav" id="nav">
@@ -228,12 +227,10 @@ body{
 <section id="profile">
   <div class="profile-card">
 
-    <!-- IMAGE CENTER -->
     <div class="profile-img-wrap">
       <img src="./images/web_img.jpg" alt="Munisa Rakhmonova">
     </div>
 
-    <!-- TEXT -->
     <div class="profile-right">
       <h2>Munisa Rakhmonova</h2>
       <h4>Backend Developer</h4>
