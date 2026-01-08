@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-/* ========== RESET ========== */
+/* ===== RESET ===== */
 *{
   margin:0;
   padding:0;
@@ -22,7 +22,7 @@ body{
   overflow-x:hidden;
 }
 
-/* ================= HEADER ================= */
+/* ===== HEADER ===== */
 .topbar{
   display:flex;
   justify-content:space-between;
@@ -42,6 +42,7 @@ body{
 .nav{
   display:flex;
   gap:18px;
+  transition: all .3s ease;
 }
 
 .nav a{
@@ -55,21 +56,21 @@ body{
   color:gold;
 }
 
-/* ACTIVE (underline YO‘Q) */
 .nav a.active{
   color:gold;
   opacity:1;
   font-weight:bold;
 }
 
-/* HAMBURGER */
+/* ===== HAMBURGER ===== */
 .hamburger{
-  display:none; /* Desktop da yashirin */
+  display:none; /* faqat mobile */
   flex-direction:column;
   gap:5px;
   background:none;
   border:none;
   cursor:pointer;
+  z-index:101;
 }
 
 .hamburger span{
@@ -90,7 +91,7 @@ body{
   transform:rotate(-45deg) translate(6px,-6px);
 }
 
-/* MOBILE MENU */
+/* ===== MOBILE MENU ===== */
 @media(max-width:768px){
   .hamburger{display:flex;}
 
@@ -102,11 +103,9 @@ body{
     height:100%;
     background:#111;
     padding:60px 20px;
-    display:flex;
     flex-direction:column;
     align-items:flex-end;
     gap:14px;
-    transition:right .3s ease;
     z-index:100;
   }
 
@@ -115,12 +114,11 @@ body{
   }
 }
 
-/* ================= PROFILE SECTION ================= */
+/* ===== PROFILE SECTION ===== */
 .container{
   padding:100px 6%;
 }
 
-/* CARD — REAL CENTER */
 .profile-card{
   max-width:1000px;
   margin:auto;
@@ -129,34 +127,27 @@ body{
 
   display:flex;
   flex-direction:column;
-  justify-content:center;   /* VERTICAL CENTER */
-  align-items:center;       /* HORIZONTAL CENTER */
+  justify-content:center;
+  align-items:center;
   text-align:center;
   gap:35px;
 
   border-radius:24px;
-  background:linear-gradient(
-    135deg,
-    rgba(255,255,255,0.06),
-    rgba(255,255,255,0.02)
-  );
+  background:linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
   border:1px solid rgba(255,255,255,0.1);
   box-shadow:0 40px 80px rgba(0,0,0,.7);
 }
 
-/* IMAGE — PERFECT CENTER */
 .profile-img-wrap{
   width:260px;
   height:260px;
   border-radius:50%;
   padding:6px;
-
   background:linear-gradient(45deg, gold, orange);
   box-shadow:0 0 40px rgba(255,215,0,.5);
-
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
 }
 
 .profile-img-wrap img{
@@ -167,7 +158,6 @@ body{
   background:#000;
 }
 
-/* INFO */
 .profile-right h2{
   font-size:42px;
   margin-bottom:6px;
@@ -190,7 +180,6 @@ body{
   max-width:620px;
 }
 
-/* RESPONSIVE */
 @media(max-width:600px){
   .profile-img-wrap{
     width:200px;
@@ -249,7 +238,6 @@ body{
 </section>
 </main>
 
-<!-- JS alohida -->
 <script src="script.js"></script>
 </body>
 </html>
