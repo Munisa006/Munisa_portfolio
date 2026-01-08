@@ -1,255 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Munisa Rakhmonova Portfolio</title>
+  <meta charset="UTF-8" />
+  <title>Portfolio Menu</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<style>
-/* ========== RESET ========== */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, Helvetica, sans-serif;
-}
+    body {
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      height: 200vh;
+    }
 
-body{
-  background:#0b0b0b;
-  color:#fff;
-  overflow-x:hidden;
-}
+    /* TOP BAR */
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 64px;
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 1000;
+    }
 
-/* ================= HEADER ================= */
-.topbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:18px 6%;
-  background:#000;
-  position:sticky;
-  top:0;
-  z-index:100;
-}
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
 
-.logo{
-  font-size:22px;
-  font-weight:bold;
-}
+    /* HAMBURGER */
+    .menu-btn {
+      width: 28px;
+      cursor: pointer;
+    }
 
-.nav{
-  display:flex;
-  gap:18px;
-}
+    .menu-btn span {
+      display: block;
+      height: 3px;
+      background: #fff;
+      margin: 6px 0;
+    }
 
-.nav a{
-  color:#fff;
-  text-decoration:none;
-  opacity:.85;
-  transition:.3s;
-}
+    /* CLOSE X */
+    .close-btn {
+      font-size: 34px;
+      cursor: pointer;
+      display: none;
+    }
 
-.nav a:hover{
-  color:gold;
-}
+    /* SIDE MENU */
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -320px;
+      width: 320px;
+      height: 100vh;
+      background: linear-gradient(180deg, #111, #000);
+      padding-top: 120px;
+      transition: 0.4s ease;
+      z-index: 999;
+    }
 
-/* ACTIVE (underline YO‘Q) */
-.nav a.active{
-  color:gold;
-  opacity:1;
-  font-weight:bold;
-}
+    .side-menu.active {
+      right: 0;
+    }
 
-/* HAMBURGER */
-.hamburger{
-  display:none; /* Desktop da yashirin */
-  flex-direction:column;
-  gap:5px;
-  background:none;
-  border:none;
-  cursor:pointer;
-}
+    .side-menu ul {
+      list-style: none;
+      padding-left: 60px;
+    }
 
-.hamburger span{
-  width:30px;
-  height:3px;
-  background:#fff;
-  border-radius:3px;
-  transition:.3s;
-}
+    .side-menu li {
+      font-size: 26px;
+      margin-bottom: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-.hamburger.active span:nth-child(1){
-  transform:rotate(45deg) translate(5px,5px);
-}
-.hamburger.active span:nth-child(2){
-  opacity:0;
-}
-.hamburger.active span:nth-child(3){
-  transform:rotate(-45deg) translate(6px,-6px);
-}
+    .side-menu li:hover {
+      color: #ffd400;
+    }
 
-/* MOBILE MENU */
-@media(max-width:768px){
-  .hamburger{display:flex;}
-
-  .nav{
-    position:fixed;
-    top:0;
-    right:-260px;
-    width:250px;
-    height:100%;
-    background:#111;
-    padding:60px 20px;
-    display:flex;
-    flex-direction:column;
-    align-items:flex-end;
-    gap:14px;
-    transition:right .3s ease;
-    z-index:100;
-  }
-
-  .nav.active{
-    right:0;
-  }
-}
-
-/* ================= PROFILE SECTION ================= */
-.container{
-  padding:100px 6%;
-}
-
-/* CARD — REAL CENTER */
-.profile-card{
-  max-width:1000px;
-  margin:auto;
-  min-height:520px;
-  padding:60px 40px;
-
-  display:flex;
-  flex-direction:column;
-  justify-content:center;   /* VERTICAL CENTER */
-  align-items:center;       /* HORIZONTAL CENTER */
-  text-align:center;
-  gap:35px;
-
-  border-radius:24px;
-  background:linear-gradient(
-    135deg,
-    rgba(255,255,255,0.06),
-    rgba(255,255,255,0.02)
-  );
-  border:1px solid rgba(255,255,255,0.1);
-  box-shadow:0 40px 80px rgba(0,0,0,.7);
-}
-
-/* IMAGE — PERFECT CENTER */
-.profile-img-wrap{
-  width:260px;
-  height:260px;
-  border-radius:50%;
-  padding:6px;
-
-  background:linear-gradient(45deg, gold, orange);
-  box-shadow:0 0 40px rgba(255,215,0,.5);
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.profile-img-wrap img{
-  width:100%;
-  height:100%;
-  border-radius:50%;
-  object-fit:cover;
-  background:#000;
-}
-
-/* INFO */
-.profile-right h2{
-  font-size:42px;
-  margin-bottom:6px;
-}
-
-.profile-right h4{
-  color:gold;
-  font-size:22px;
-  margin-bottom:16px;
-}
-
-.profile-meta{
-  color:#aaa;
-  margin-bottom:20px;
-}
-
-.profile-text{
-  font-size:18px;
-  line-height:1.8;
-  max-width:620px;
-}
-
-/* RESPONSIVE */
-@media(max-width:600px){
-  .profile-img-wrap{
-    width:200px;
-    height:200px;
-  }
-
-  .profile-right h2{
-    font-size:34px;
-  }
-}
-</style>
+    .side-menu li.active {
+      color: #ffd400;
+      font-weight: bold;
+    }
+  </style>
 </head>
 
 <body>
 
-<header class="topbar">
-  <h1 class="logo">WELCOME TO MY PORTFOLIO</h1>
+  <header class="topbar">
+    <div class="logo">Munisa</div>
 
-  <button class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
+    <!-- HAMBURGER -->
+    <div class="menu-btn" id="menuBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-  <nav class="nav" id="nav">
-    <a href="#profile" class="active">Profile</a>
-    <a href="education.html#background">Background</a>
-    <a href="awards.html">Awards</a>
-    <a href="projects.html">Projects</a>
-    <a href="contact.html">Contact</a>
+    <!-- CLOSE X -->
+    <div class="close-btn" id="closeBtn">&times;</div>
+  </header>
+
+  <!-- SIDE MENU -->
+  <nav class="side-menu" id="sideMenu">
+    <ul>
+      <li class="active">Profile</li>
+      <li>Background</li>
+      <li>Awards</li>
+      <li>Projects</li>
+      <li>Contact</li>
+    </ul>
   </nav>
-</header>
 
-<main class="container">
-<section id="profile">
-  <div class="profile-card">
-
-    <div class="profile-img-wrap">
-      <img src="./images/web_img.jpg" alt="Munisa Rakhmonova">
-    </div>
-
-    <div class="profile-right">
-      <h2>Munisa Rakhmonova</h2>
-      <h4>Backend Developer</h4>
-
-      <p class="profile-meta">📍 Tashkent, Uzbekistan</p>
-
-      <p class="profile-text">
-        I am a Computer Science student passionate about technology and backend
-        development. I focus on building clean, scalable systems and constantly
-        improving my skills through practice and real projects.
-      </p>
-    </div>
-
-  </div>
-</section>
-</main>
-
-<!-- JS alohida -->
-<script src="script.js"></script>
+  <!-- TASHQI JS -->
+  <script src="script.js"></script>
 </body>
 </html>
