@@ -64,7 +64,7 @@ body{
 
 /* HAMBURGER */
 .hamburger{
-  display:flex;
+  display:none; /* Desktop da yashirin */
   flex-direction:column;
   gap:5px;
   background:none;
@@ -107,6 +107,7 @@ body{
     align-items:flex-end;
     gap:14px;
     transition:right .3s ease;
+    z-index:100;
   }
 
   .nav.active{
@@ -128,8 +129,8 @@ body{
 
   display:flex;
   flex-direction:column;
-  justify-content:center;   /* 🔥 VERTICAL CENTER */
-  align-items:center;       /* 🔥 HORIZONTAL CENTER */
+  justify-content:center;   /* VERTICAL CENTER */
+  align-items:center;       /* HORIZONTAL CENTER */
   text-align:center;
   gap:35px;
 
@@ -248,6 +249,7 @@ body{
 </section>
 </main>
 
+<!-- JS alohida -->
 <script src="script.js"></script>
 </body>
 </html>
